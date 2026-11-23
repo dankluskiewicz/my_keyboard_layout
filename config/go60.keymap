@@ -351,10 +351,6 @@
 / {
     behaviors {
 
-        // Layer tap dance behaviors
-
-        ZMK_TD_LAYER(td_LAYER_Magic, 3)
-
     };
 };
 
@@ -374,7 +370,7 @@
             &kp EQUAL   &kp A      &kp R    &kp S     &kp T   &kp G                                                                                               &kp M      &kp N      &kp E     &kp I     &kp O          &kp SQT
  &magic LAYER_Magic 0   &kp X      &kp C    &kp D     &kp V   &kp Z                                                                                               &kp K      &kp H  &kp COMMA   &kp DOT  &kp FSLH  &mo LAYER_Magic
                                &kp GRAVE  &kp DEL  &kp BSPC                                                                                                              &kp LCTRL   &kp LBKT  &kp RBKT
-                                                                     &mt LGUI TAB  &mo LAYER_NavNum  &kp LSHFT  &kp LSHFT  &lt LAYER_Symbol SPACE  &mt RALT RET
+                                                                     &mt LGUI TAB  &mo LAYER_NavNum  &kp LSHFT  &kp BSPC  &lt LAYER_Symbol SPACE  &mt RALT RET
             >;
         };
 
@@ -383,18 +379,18 @@
                 &none   &none     &none     &none      &none      &none                                                              &none      &none      &none         &none  &kp LS(EQUAL)   &none
                &trans   &none  &kp HOME    &kp UP    &kp END  &kp PG_UP                                                              &none  &kp KP_N7  &kp KP_N8     &kp KP_N9      &kp MINUS   &none
                &trans   &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                                                              &none  &kp KP_N4  &kp KP_N5     &kp KP_N6     &kp LS(N8)   &none
- &magic LAYER_Magic 0   &none     &none     &none      &none      &none                                                              &none  &kp KP_N1  &kp KP_N2     &kp KP_N3       &kp FSLH   &none
+ &magic LAYER_Magic 0   &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT  &none                                                              &none  &kp KP_N1  &kp KP_N2     &kp KP_N3       &kp FSLH   &none
                                   &none    &trans     &trans                                                                                &kp KP_N0    &kp DOT  &kp KP_EQUAL
-                                                                         &mo LAYER_Symbol  &trans  &trans  &trans  &trans  &kp RET
+                                                                         &mo LAYER_Symbol  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         layer_Symbol {
             bindings = <
                 &none       &none       &none       &none         &none          &none                                                        &none         &none     &none       &none   &none   &none
-                &none       &none  &kp LS(N1)  &kp LS(N7)  &kp LS(BSLH)       &kp FSLH                                                     &kp BSLH      &kp SEMI   &kp SQT   &kp GRAVE   &none   &none
-                &none  &kp LS(N2)  &kp LS(N9)    &kp LBKT  &kp LS(LBKT)  &kp LS(COMMA)                                                  &kp LS(DOT)  &kp LS(RBKT)  &kp RBKT  &kp LS(N0)   &none   &none
- &magic LAYER_Magic 0  &kp LS(N3)       &none       &none         &none          &none                                                    &kp MINUS         &none     &none       &none   &none   &none
+                &none       &none  &kp LS(N1)  &kp LS(N7)  &kp LS(BSLH)       &kp FSLH                                                     &kp BSLH      &kp SEMI   &kp SQT   &kp GRAVE   &kp LS(SQT)   &none
+                &none  &kp LS(N2)  &kp LS(N9)    &kp LBKT  &kp LS(LBKT)  &kp LS(COMMA)                                                  &kp LS(DOT)  &kp LS(RBKT)  &kp RBKT  &kp LS(N0)   &kp EQUAL   &none
+ &magic LAYER_Magic 0  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)  &kp LS(GRAVE)          &none                                                    &kp MINUS  &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(N8)   &kp LS(SEMI)   &none
                                    &kp LS(N6)      &trans        &trans                                                                                    &trans     &none       &none
                                                                                          &trans  &trans  &trans  &trans  &trans  &trans
             >;
