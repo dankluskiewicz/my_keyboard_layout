@@ -337,7 +337,28 @@
 
 /* Custom Defined Behaviors */
 / {
-
+    behaviors {
+        // Nav thumb: tap = Enter, hold = NavNum.
+        // "balanced" so a quick Nav+arrow still counts as a hold.
+        lt_nav: lt_nav {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&kp>;
+        };
+        // Right thumbs: tap = key, hold = modifier.
+        // Tap then hold repeats the key (e.g. hold Backspace to delete a run).
+        mt_thumb: mt_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
 };
 
 /* Automatically generated macro definitions */
@@ -369,8 +390,8 @@
               &kp TAB   &kp Q      &kp W    &kp F     &kp P   &kp B                                                                                               &kp J      &kp L      &kp U     &kp Y  &kp SEMI         &kp BSLH
             &kp EQUAL   &kp A      &kp R    &kp S     &kp T   &kp G                                                                                               &kp M      &kp N      &kp E     &kp I     &kp O          &kp SQT
  &magic LAYER_Magic 0   &kp X      &kp C    &kp D     &kp V   &kp Z                                                                                               &kp K      &kp H  &kp COMMA   &kp DOT  &kp FSLH  &mo LAYER_Magic
-                               &kp GRAVE  &kp DEL  &kp BSPC                                                                                                              &kp LCTRL   &kp LBKT  &kp RBKT
-                                                                     &mt LGUI TAB  &mo LAYER_NavNum  &kp LSHFT  &kp BSPC  &lt LAYER_Symbol SPACE  &mt RALT RET
+                               &kp LPAR  &kp RPAR  &kp GRAVE                                                                                                              &kp LCTRL   &kp LBKT  &kp RBKT
+                                                                     &mt LGUI TAB  &kp LSHFT  &lt_nav LAYER_NavNum RET  &lt LAYER_Symbol SPACE  &mt_thumb LALT BSPC  &mt_thumb LGUI DEL
             >;
         };
 
