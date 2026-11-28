@@ -353,7 +353,7 @@
             quick-tap-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
-        // Space/Shift, Enter/Alt, Esc/Cmd thumbs: tap = key, hold = modifier.
+        // Tab/Ctrl edge key and Space/Shift, Enter/Shift, Esc/Cmd thumbs: tap = key, hold = modifier.
         // Tap then hold repeats the key.
         mt_thumb: mt_thumb {
             compatible = "zmk,behavior-hold-tap";
@@ -391,12 +391,12 @@
 
         layer_Base {
             bindings = <
-              &kp ESC  &kp N1     &kp N2   &kp N3    &kp N4  &kp N5                                                                                              &kp N6     &kp N7     &kp N8    &kp N9    &kp N0        &kp MINUS
-              &kp TAB   &kp Q      &kp W    &kp F     &kp P   &kp B                                                                                               &kp J      &kp L      &kp U     &kp Y  &kp SEMI         &kp BSLH
+              &kp GRAVE  &kp N1     &kp N2   &kp N3    &kp N4  &kp N5                                                                                              &kp N6     &kp N7     &kp N8    &kp N9    &kp N0        &kp MINUS
+              &mt_thumb LCTRL TAB   &kp Q      &kp W    &kp F     &kp P   &kp B                                                                                               &kp J      &kp L      &kp U     &kp Y  &kp SEMI         &kp BSLH
             &kp EQUAL   &kp A      &kp R    &kp S     &kp T   &kp G                                                                                               &kp M      &kp N      &kp E     &kp I     &kp O          &kp SQT
  &magic LAYER_Magic 0   &kp X      &kp C    &kp D     &kp V   &kp Z                                                                                               &kp K      &kp H  &kp COMMA   &kp DOT  &kp FSLH  &mo LAYER_Magic
-                               &kp LPAR  &kp RPAR  &kp GRAVE                                                                                                              &kp LCTRL   &kp LBKT  &kp RBKT
-                                                                     &mt LGUI TAB  &mt_thumb LSHFT SPACE  &lt_nav LAYER_NavNum BSPC  &lt LAYER_Symbol DEL  &mt_thumb LALT RET  &mt_thumb LGUI ESC
+                               &kp LPAR  &kp RPAR  &kp LALT                                                                                                              &kp LALT   &kp LBKT  &kp RBKT
+                                                                     &mt LGUI TAB  &mt_thumb LSHFT SPACE  &lt_nav LAYER_NavNum BSPC  &lt LAYER_Symbol DEL  &mt_thumb LSHFT RET  &mt_thumb LGUI ESC
             >;
         };
 
